@@ -18,7 +18,7 @@ public class Driver {
             System.out.print("\nEnter the size of the array : ");
             int size = input.nextInt();
             for (int i = 0; i < size; i++) {
-                list.add((int) (i + (Math.random() * 100)));
+                list.add((int) (Math.random() * 100));
             }
             Collections.sort(list);
         } else {
@@ -28,10 +28,12 @@ public class Driver {
                 list.add(roll + (roll + 1) * i);
             }
         }
+        // Showing user options
         System.out.print("\n1.Best Case\n2.Worst Case\n3.Average Case\n4.Manual Choice\nEnter your choice: ");
         int newChoice = input.nextInt();
         int listSize = list.size();
         array = new int[listSize];
+        // Filling the arraylist with required values
         switch (newChoice) {
             case 1:
                 for (int i = 0; i < listSize; i++) {
@@ -62,6 +64,9 @@ public class Driver {
                             list.add(input.nextInt());
                         }
                     }
+                    for (int i = 0; i < list.size(); i++) {
+                        array[i] = list.get(i);
+                    }
                 }
                 break;
             default:
@@ -85,7 +90,7 @@ public class Driver {
                 .print("\n***********************************************\n");
         System.out.print("\nBubble Sort\n");
         // Bubble Sort
-        System.out.print("\n1.Iteration Buuble Sort\n2.Recursive Buuble Sort\n3.Bubble Sort (without for loops)   : ");
+        System.out.print("\n1.Iteration Buuble Sort\n2.Recursive Buuble Sort    : ");
         int choice2 = input.nextInt();
         // Create bubble sort object
         BubbleSort bs = new BubbleSort();
@@ -94,11 +99,9 @@ public class Driver {
         System.out.print("\n---------------------------------------------\n");
         if (choice2 == 1) {
             bs.bubbleSortIteration(array);
-        } else if (choice2 == 2) {
+        } else {
             bs.bubbleSortRec(array, listSize);
             System.out.print("\nTotal Swaps: " + bs.getSwapCount());
-        } else {
-            bs.bubbleSort(array);
         }
 
         System.out.print("\n---------------------------------------------\n");

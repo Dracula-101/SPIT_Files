@@ -77,28 +77,6 @@ public class BubbleSort {
         return arr;
     }
 
-    public void bubbleSort(int arr[], int n) {
-        // Base case
-        if (n == 1)
-            return;
-
-        if (arr[n - 1] > arr[n - 2]) {
-            swap(arr, n - 1, n - 2);
-            maxPos++;
-            bubbleSort(arr, n - 1);
-        }
-
-        bubbleSort(arr, n - 1);
-    }
-
-    public int[] bubbleSort(int[] arr) {
-        return bubbleSort(0, arr);
-    }
-
-    public void duplicateRemove(int arr[]) {
-
-    }
-
     public String printArr(int arr[]) {
         // printing the array
         if (arr.length > 10)
