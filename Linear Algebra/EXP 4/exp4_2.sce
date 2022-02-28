@@ -1,3 +1,5 @@
+printf("\n")
+
 A=input("Enter the coefficents: ")
 
 b=input("Enter the right-hand side C: ")
@@ -28,7 +30,7 @@ for i=1:n
          disp(C)
 end
 
-
+printf("Converting into lower triangle matrix\n")
 for i=1:n
     for j=i+1:n
         C(i,:)=C(i,:)-C(i,j)*C(j,:)
@@ -39,10 +41,8 @@ disp(C)
 for i=1:n
     for j=1:n
         if i==j
-            printf("X%d = %d\n",i,C(i,n+1))
+            printf("X%d = %.2f\n",i,C(i,n+1))
         end
     end
 end
-
-
 

@@ -6,17 +6,15 @@ b=[1;3;6]
 
 if isempty(x) then
     printf("System of linear equation has no solution ")
-else if isempty(n)
+elseif isempty(kerA)
         printf("System of linear equation has only one solution.It is given by:  ")
         disp(x);
         printf("The vector n is :")
         disp(kerA)
-    else 
+else 
         printf("The system of linear equation has infinite solutions")
         disp(x);
         printf("The vector n is :")
         disp(kerA)   
-    end
+end
 
-    disp(x)
-    disp(kerA)
