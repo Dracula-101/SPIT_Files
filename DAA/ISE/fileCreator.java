@@ -64,7 +64,7 @@ public class fileCreator {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         fileCreator fc = new fileCreator();
         try {
             fc.folderMaker();
@@ -72,5 +72,6 @@ public class fileCreator {
         } catch (IOException e) {
             System.err.print("\nError creating file");
         }
+
     }
 }
