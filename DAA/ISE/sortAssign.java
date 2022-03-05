@@ -14,13 +14,13 @@ public class sortAssign {
         for (int i = 1; i <= files; i++) {
             filename = "numbers-" + i + ".txt";
             int arr[] = fReader.readFile(fc.folderName + "\\" + filename);
-            double time1 = (float) System.currentTimeMillis(), time2 = 0;
+            double time1 = System.currentTimeMillis(), time2 = 0;
             switch (files % i) {
                 case 0:
                     System.out.printf("\n|\tBubble Sort   \t|");
                     bubblesort bs = new bubblesort();
                     bs.bubbleSortIteration(arr);
-                    time2 = (float) System.currentTimeMillis();
+                    time2 = System.currentTimeMillis();
                     System.out.printf(
                             "\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
@@ -28,7 +28,7 @@ public class sortAssign {
                     System.out.printf("\n|\tInsertion Sort\t|");
                     insertionsort is = new insertionsort();
                     is.insertionSort(arr);
-                    time2 = (float) System.currentTimeMillis();
+                    time2 = System.currentTimeMillis();
                     System.out.printf(
                             "\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
@@ -36,7 +36,7 @@ public class sortAssign {
                     System.out.printf("\n|\tSelection Sort\t|");
                     selectionsort ss = new selectionsort();
                     ss.selectionSort(arr);
-                    time2 = (float) System.currentTimeMillis();
+                    time2 = System.currentTimeMillis();
                     System.out.printf(
                             "\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
@@ -44,7 +44,7 @@ public class sortAssign {
                     System.out.printf("\n|\tQuick Sort    \t|");
                     quicksort qs = new quicksort();
                     qs.quickSort(arr, 0, arr.length - 1);
-                    time2 = (float) System.currentTimeMillis();
+                    time2 = System.currentTimeMillis();
                     System.out
                             .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename
                                     + "\t|");
@@ -53,7 +53,7 @@ public class sortAssign {
                     System.out.printf("\n|\tHeap Sort\t|");
                     heapsort hs = new heapsort();
                     hs.heapSort(arr);
-                    time2 = (float) System.currentTimeMillis();
+                    time2 = System.currentTimeMillis();
                     System.out
                             .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename
                                     + "\t|");
@@ -62,7 +62,7 @@ public class sortAssign {
                     System.out.printf("\n|\tRadix Sort\t|");
                     radixsort rs = new radixsort();
                     rs.radixSort(arr, arr.length);
-                    time2 = (float) System.currentTimeMillis();
+                    time2 = System.currentTimeMillis();
                     System.out
                             .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
@@ -70,7 +70,7 @@ public class sortAssign {
                     System.out.printf("\n|\tMerge Sort\t|");
                     mergesort ms = new mergesort();
                     ms.mergeSort(arr, 0, arr.length - 1);
-                    time2 = (float) System.currentTimeMillis();
+                    time2 = System.currentTimeMillis();
                     System.out
                             .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;

@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class numberGenerator {
 
-    public static int numbers = 1000000;
+    public static int numbers = 10000;
     public int threadNum = 6;
     // Thread threads[] = new Thread[];
     public ArrayList<Integer> list = new ArrayList<Integer>(numbers);
