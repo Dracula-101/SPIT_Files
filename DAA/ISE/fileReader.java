@@ -1,29 +1,37 @@
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
+// import java.io.File;
+// import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class fileReader {
     String filename;
+    int array[] = new int[Math.abs(numberGenerator.numbers / fileCreator.numFiles)];
 
-    public void readFile(String filename) throws IOException {
+    public int[] readFile(String filename) throws IOException {
         // File fileptr = new File(filename);
         BufferedReader br = new BufferedReader(new FileReader(filename));
+        FileReader fr = new FileReader(filename);
         String st;
-        ArrayList<Integer> arraylist = new ArrayList<Integer>();
+        int i = 0;
         while ((st = br.readLine()) != null) {
-            arraylist.add(Integer.parseInt(st));
-
+            array[i++] = Integer.parseInt(st);
         }
-        int array[] = arraylist.to;
-
+        // while ((i = fr.read()) != -1)
+        // array[i] = Integer.parseInt(String.valueOf((char) i));
+        br.close();
+        return array;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         fileReader fr = new fileReader();
-
-        fr.readFile("files\\numbers-1.txt");
+        try {
+            int[] array = fr.readFile("files\\numbers-1.txt");
+            for (int i = 0; i < array.length; i++) {
+                System.out.print(array[i] + " ");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

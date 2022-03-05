@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class fileCreator {
-    int numFiles = 10;
+    static int numFiles = 10;
     String fileName = "";
     String folderName = "files";
     public numberGenerator ng = new numberGenerator();
@@ -29,7 +29,8 @@ public class fileCreator {
         for (int i = 1; i <= numFiles; i++) {
             fileName = "numbers-" + i + ".txt";
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(folderName + "\\" + fileName))) {
-                for (j = lastOffset + 1; j <= lastOffset + ng.numbers / numFiles && j < ng.numbers + 1; j++) {
+                for (j = lastOffset + 1; j <= lastOffset + numberGenerator.numbers / numFiles
+                        && j < numberGenerator.numbers + 1; j++) {
                     writer.write(ng.list.get(j - 1) + "\n");
                     writer.flush();
                 }
@@ -72,6 +73,8 @@ public class fileCreator {
         } catch (IOException e) {
             System.err.print("\nError creating file");
         }
+        sortAssign sa = new sortAssign();
+        sa.assign();
 
     }
 }
