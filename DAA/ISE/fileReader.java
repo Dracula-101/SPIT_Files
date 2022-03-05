@@ -11,7 +11,6 @@ public class fileReader {
     public int[] readFile(String filename) throws IOException {
         // File fileptr = new File(filename);
         BufferedReader br = new BufferedReader(new FileReader(filename));
-        FileReader fr = new FileReader(filename);
         String st;
         int i = 0;
         while ((st = br.readLine()) != null) {
@@ -21,17 +20,5 @@ public class fileReader {
         // array[i] = Integer.parseInt(String.valueOf((char) i));
         br.close();
         return array;
-    }
-
-    public static void main(String[] args) {
-        fileReader fr = new fileReader();
-        try {
-            int[] array = fr.readFile("files\\numbers-1.txt");
-            for (int i = 0; i < array.length; i++) {
-                System.out.print(array[i] + " ");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
