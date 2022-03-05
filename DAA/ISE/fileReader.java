@@ -16,8 +16,7 @@ public class fileReader {
         while ((st = br.readLine()) != null) {
             array[i++] = Integer.parseInt(st);
         }
-        // while ((i = fr.read()) != -1)
-        // array[i] = Integer.parseInt(String.valueOf((char) i));
+
         br.close();
         return array;
     }

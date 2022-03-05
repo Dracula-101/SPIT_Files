@@ -17,6 +17,18 @@ public class fileWriter {
         try {
             FileWriter fw = new FileWriter(folderoutput + "\\" + filename);
             for (int i = 0; i < arr.length; i++) {
+                fw.write(arr[i] + "\n");
+            }
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void filewrite(int arr[], String filename, String foldername) {
+        try {
+            FileWriter fw = new FileWriter(foldername + "\\" + filename);
+            for (int i = 0; i < arr.length; i++) {
                 fw.write(arr[i] + " ");
             }
             fw.close();
@@ -24,4 +36,5 @@ public class fileWriter {
             e.printStackTrace();
         }
     }
+
 }

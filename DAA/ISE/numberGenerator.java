@@ -3,10 +3,11 @@ import java.util.Collections;
 
 public class numberGenerator {
 
-    public static int numbers = 10000;
+    public static int numbers = 1000000;
     public int threadNum = 6;
     // Thread threads[] = new Thread[];
     public ArrayList<Integer> list = new ArrayList<Integer>(numbers);
+    int[] array = new int[numbers];
 
     public void generate() {
         double time1 = (float) System.nanoTime() / 1000000000;
@@ -25,7 +26,6 @@ public class numberGenerator {
     public void arrayGen() {
         double time1 = (float) System.nanoTime() / 1000000000;
         System.out.print("\nGenerating Numbers Time=" + time1);
-        int[] array = new int[numbers];
         for (int i = 1; i <= numbers; i++) {
             array[i - 1] = (int) (Math.random() * numbers * Math.random());
         }
