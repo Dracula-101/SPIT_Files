@@ -6,6 +6,7 @@ import sort.mergesort;
 public class fileMerger {
     String output = "output.txt";
     int files = fileCreator.numFiles;
+    double duration = 0;
 
     fileCreator fc = new fileCreator();
     fileReader fr = new fileReader();
@@ -34,7 +35,7 @@ public class fileMerger {
             double time1 = System.currentTimeMillis();
             ms.mergeSort(newArray, 0, newArray.length - 1);
             double time2 = System.currentTimeMillis();
-            double duration = time2 - time1;
+            duration = time2 - time1;
             System.out.print("\nMerging Step (" + i + ") : " + duration + " ms");
             totalTime += duration;
             // System.out.print("\n\n" + Arrays.toString(newArray));

@@ -2,11 +2,12 @@ import java.io.IOException;
 import sort.*;
 
 public class sortAssign {
+    double totalTime = 0;
+
     public void assign() throws IOException {
         int files = fileCreator.numFiles;
 
         String filename;
-        double totalTime = 0;
         fileCreator fc = new fileCreator();
         fileReader fReader = new fileReader();
         fileWriter fw = new fileWriter();
@@ -15,14 +16,14 @@ public class sortAssign {
             filename = "numbers-" + i + ".txt";
             int arr[] = fReader.readFile(fc.folderName + "\\" + filename);
             double time1 = System.currentTimeMillis(), time2 = 0;
-            switch (files % i) {
+            switch ((i - 1) % 6) {
                 case 0:
                     System.out.printf("\n|\tBubble Sort   \t|");
                     bubblesort bs = new bubblesort();
                     bs.bubbleSortIteration(arr);
                     time2 = System.currentTimeMillis();
                     System.out.printf(
-                            "\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
+                            "  " + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
                 case 1:
                     System.out.printf("\n|\tInsertion Sort\t|");
@@ -30,7 +31,7 @@ public class sortAssign {
                     is.insertionSort(arr);
                     time2 = System.currentTimeMillis();
                     System.out.printf(
-                            "\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
+                            "  " + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
                 case 2:
                     System.out.printf("\n|\tSelection Sort\t|");
@@ -38,7 +39,7 @@ public class sortAssign {
                     ss.selectionSort(arr);
                     time2 = System.currentTimeMillis();
                     System.out.printf(
-                            "\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
+                            "  " + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
                 case 3:
                     System.out.printf("\n|\tQuick Sort    \t|");
@@ -46,7 +47,7 @@ public class sortAssign {
                     qs.quickSort(arr, 0, arr.length - 1);
                     time2 = System.currentTimeMillis();
                     System.out
-                            .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename
+                            .printf("  " + (time2 - time1) + " ms\t\t|\t" + filename
                                     + "\t|");
                     break;
                 case 4:
@@ -55,7 +56,7 @@ public class sortAssign {
                     hs.heapSort(arr);
                     time2 = System.currentTimeMillis();
                     System.out
-                            .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename
+                            .printf("  " + (time2 - time1) + " ms\t\t|\t" + filename
                                     + "\t|");
                     break;
                 case 5:
@@ -64,7 +65,7 @@ public class sortAssign {
                     rs.radixSort(arr, arr.length);
                     time2 = System.currentTimeMillis();
                     System.out
-                            .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
+                            .printf("  " + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
                 case 6:
                     System.out.printf("\n|\tMerge Sort\t|");
@@ -72,7 +73,7 @@ public class sortAssign {
                     ms.mergeSort(arr, 0, arr.length - 1);
                     time2 = System.currentTimeMillis();
                     System.out
-                            .printf("\t" + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
+                            .printf("  " + (time2 - time1) + " ms\t\t|\t" + filename + "\t|");
                     break;
                 default:
                     System.out.println("\nError in assigning sort");

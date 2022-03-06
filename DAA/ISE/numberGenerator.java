@@ -3,8 +3,9 @@ import java.util.Collections;
 
 public class numberGenerator {
 
-    public static int numbers = 10000;
+    public static int numbers = 1000000;
     public int threadNum = 6;
+    static double duration, shufffleTime = 0;
     // Thread threads[] = new Thread[];
     public ArrayList<Integer> list = new ArrayList<Integer>(numbers);
     int[] array = new int[numbers];
@@ -16,10 +17,12 @@ public class numberGenerator {
             list.add(i);
         }
         double time2 = (float) System.nanoTime() / 1000000000;
-        System.out.print("\nFinished Generating numbers Time=" + (time2 - time1));
+        duration = time2 - time1;
+        System.out.print("\nFinished Generating numbers Time=" + duration);
         Collections.shuffle(list);
         double time3 = (float) System.nanoTime() / 1000000000;
-        System.out.print("\nShuffled Finished Time =" + (time3 - time1));
+        shufffleTime = time3 - time2;
+        System.out.print("\nShuffled Finished Time =" + shufffleTime);
 
     }
 
@@ -30,7 +33,8 @@ public class numberGenerator {
             array[i - 1] = (int) (Math.random() * numbers * Math.random());
         }
         double time2 = (float) System.nanoTime() / 1000000000;
-        System.out.print("\nFinished Generating numbers Time=" + (time2 - time1));
+        duration = time2 - time1;
+        System.out.print("\nFinished Generating numbers Time=" + duration);
     }
 
 }

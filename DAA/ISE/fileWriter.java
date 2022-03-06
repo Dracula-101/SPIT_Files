@@ -5,7 +5,15 @@ import java.io.IOException;
 public class fileWriter {
     String folderoutput = "merging";
 
+    public void deleteFiles() {
+        File folder = new File(folderoutput);
+        for (File file : folder.listFiles()) {
+            file.delete();
+        }
+    }
+
     public fileWriter() {
+        deleteFiles();
         File folderFile = new File(folderoutput);
 
         if (!folderFile.exists() && folderFile.mkdir()) {
