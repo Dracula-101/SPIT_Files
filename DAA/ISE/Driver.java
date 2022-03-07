@@ -21,7 +21,7 @@ public class Driver {
             System.out.print("\nNumber of files cannot be greater than number of elements");
             System.exit(0);
         }
-        System.out.print("\n1.Ascending Wise Sorting\n2.Random Wise Sorting\n");
+        System.out.print("\n1.Unique Sorting\n2.Random Wise Sorting     :");
         int choice = input.nextInt();
         if (choice == 1) {
             ng.generate();
@@ -43,7 +43,19 @@ public class Driver {
         sortAssign sa = new sortAssign();
         fileMerger fm = new fileMerger();
         System.out.print("\n----------SORTING----------\n");
-        sa.assign();
+        System.out.print("\n1.Manual Sorting\n2.Automatic Sorting      :");
+        int choice1 = input.nextInt();
+        if (choice1 == 1) {
+            System.out.print(
+                    "\n1.Bubble Sort\n2.Insertion Sort\n3.Selection Sort\n4.Quick Sort\n5.Heap Sort\n6.Radix Sort\n7.Merge Sort\n");
+            System.out.print("\n\nEnter the sorting method: ");
+            sa.assign(input.nextInt(), 0);
+        } else if (choice1 == 2) {
+            sa.assign(0, 1);
+        } else {
+            System.out.print("\nInvalid Choice");
+            System.exit(0);
+        }
         System.out.print("\n----------MERGING----------\n");
         fm.merger();
         System.out.print("\n----------TOTAL TIME----------\n");

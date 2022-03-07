@@ -18,11 +18,11 @@ public class numberGenerator {
         }
         double time2 = (float) System.nanoTime() / 1000000000;
         duration = time2 - time1;
-        System.out.print("\nFinished Generating numbers Time=" + duration);
+        System.out.print("\nFinished Generating numbers Time=" + duration + "s");
         Collections.shuffle(list);
         double time3 = (float) System.nanoTime() / 1000000000;
         shufffleTime = time3 - time2;
-        System.out.print("\nShuffled Finished Time =" + shufffleTime);
+        System.out.print("\nShuffled Finished Time =" + shufffleTime + "s");
 
     }
 
@@ -34,7 +34,7 @@ public class numberGenerator {
         }
         double time2 = (float) System.nanoTime() / 1000000000;
         duration = time2 - time1;
-        System.out.print("\nFinished Generating numbers Time=" + duration);
+        System.out.print("\nFinished Generating numbers Time=" + duration + "s");
     }
 
 }

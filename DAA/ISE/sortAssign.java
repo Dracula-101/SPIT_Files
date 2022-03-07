@@ -4,7 +4,7 @@ import sort.*;
 public class sortAssign {
     double totalTime = 0;
 
-    public void assign() throws IOException {
+    public void assign(int sortingMethod, int useAutoSorting) throws IOException {
         int files = fileCreator.numFiles;
 
         String filename;
@@ -16,7 +16,7 @@ public class sortAssign {
             filename = "numbers-" + i + ".txt";
             int arr[] = fReader.readFile(fc.folderName + "\\" + filename);
             double time1 = System.currentTimeMillis(), time2 = 0;
-            switch ((i - 1) % 6) {
+            switch ((((i - 1) % 6) * useAutoSorting) + sortingMethod) {
                 case 0:
                     System.out.printf("\n|\tBubble Sort   \t|");
                     bubblesort bs = new bubblesort();
