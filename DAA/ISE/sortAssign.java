@@ -83,5 +83,8 @@ public class sortAssign {
             fw.filewrite(arr, filename);
         }
         System.out.println("\nTotal time taken for all sorts = " + totalTime + "ms");
+        System.out.print("\n----------MERGING----------\n");
+        fileMerger fm = new fileMerger();
+        fm.merger(sortingMethod);
     }
 }

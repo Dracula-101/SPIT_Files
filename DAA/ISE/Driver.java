@@ -8,8 +8,9 @@ public class Driver {
         fileCreator fc = new fileCreator();
         Scanner input = new Scanner(System.in);
         numberGenerator ng = new numberGenerator();
-        new fileWriter();
-
+        fileWriter fw = new fileWriter();
+        fw.deleteFiles(fc.folderName);
+        fw.deleteFiles(fw.folderoutput);
         System.out.print("\n----------SORTING NUMBERS----------\n");
         System.out.print("\nEnter the number of elements to be sorted: ");
         int num = input.nextInt();
@@ -49,15 +50,13 @@ public class Driver {
             System.out.print(
                     "\n1.Bubble Sort\n2.Insertion Sort\n3.Selection Sort\n4.Quick Sort\n5.Heap Sort\n6.Radix Sort\n7.Merge Sort\n");
             System.out.print("\n\nEnter the sorting method: ");
-            sa.assign(input.nextInt(), 0);
+            sa.assign(input.nextInt() - 1, 0);
         } else if (choice1 == 2) {
             sa.assign(0, 1);
         } else {
             System.out.print("\nInvalid Choice");
             System.exit(0);
         }
-        System.out.print("\n----------MERGING----------\n");
-        fm.merger();
         System.out.print("\n----------TOTAL TIME----------\n");
         System.out.print("\n\nTOTAL TIME FOR ALL THE SORTING IS : "
                 + (numberGenerator.duration + numberGenerator.shufffleTime + fc.duration + sa.totalTime

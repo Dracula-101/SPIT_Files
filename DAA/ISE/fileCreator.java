@@ -6,7 +6,7 @@ import java.io.IOException;
 public class fileCreator {
     static int numFiles = 100;
     String fileName = "";
-    String folderName = "files";
+    String folderName = "sorted";
     double duration;
 
     public void createFiles() throws IOException {

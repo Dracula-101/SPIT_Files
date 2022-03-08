@@ -3,17 +3,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class fileWriter {
-    String folderoutput = "merging";
+    String folderoutput = "unsorted";
 
-    public void deleteFiles() {
-        File folder = new File(folderoutput);
+    public void deleteFiles(String folderName) {
+        File folder = new File(folderName);
+        if (folder.list() == null) {
+            return;
+        }
         for (File file : folder.listFiles()) {
             file.delete();
         }
     }
 
     public fileWriter() {
-        deleteFiles();
         File folderFile = new File(folderoutput);
 
         if (!folderFile.exists() && folderFile.mkdir()) {
