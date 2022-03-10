@@ -85,6 +85,6 @@ public class sortAssign {
         System.out.println("\nTotal time taken for all sorts = " + totalTime + "ms");
         System.out.print("\n----------MERGING----------\n");
         fileMerger fm = new fileMerger();
-        fm.merger(sortingMethod);
+        fm.merger();
     }
 }

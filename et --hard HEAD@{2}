@@ -1,0 +1,25 @@
+[33mbdf4040[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: commit: Added merging logic
+[33m1818868[m HEAD@{1}: reset: moving to HEAD
+[33m1818868[m HEAD@{2}: commit: added Resume
+[33ma6bd456[m HEAD@{3}: commit: Added
+[33mb09c3f8[m HEAD@{4}: commit: Modified delete logic
+[33m40c0755[m HEAD@{5}: commit: last
+[33m4c5988c[m HEAD@{6}: commit: Final of sorting exp
+[33me8662fc[m HEAD@{7}: commit: Deleted bruh
+[33m5c411a2[m HEAD@{8}: commit: Added gitignore
+[33m814b2a5[m HEAD@{9}: commit: added sorting logic
+[33meac5070[m HEAD@{10}: commit:
+[33m177e16a[m HEAD@{11}: commit: Added Changes
+[33m0bf42ea[m HEAD@{12}: pull --tags origin main (finish): returning to refs/heads/main
+[33m0bf42ea[m HEAD@{13}: pull --tags origin main (pick): added resume
+[33me2ed9cc[m HEAD@{14}: pull --tags origin main (start): checkout e2ed9cc5740064d714754fb63e496d3797ea0bd0
+[33m74185f1[m HEAD@{15}: pull --tags origin main: updating HEAD
+[33m74185f1[m HEAD@{16}: commit: added resume
+[33m49d9aa2[m HEAD@{17}: commit: Added new Files
+[33m43facfe[m HEAD@{18}: commit: Added Files
+[33m9a71c16[m HEAD@{19}: commit: DAA changes
+[33m2d5d4ae[m HEAD@{20}: commit: DAA Changes
+[33m89af74d[m HEAD@{21}: pull --tags origin main (finish): returning to refs/heads/main
+[33m89af74d[m HEAD@{22}: pull --tags origin main (start): checkout 89af74d3a2a8aec9ae4b3c932aadd51e90caa473
+[33m373f4b3[m HEAD@{23}: pull --tags origin main: updating HEAD
+[33m373f4b3[m HEAD@{24}: commit (initial): Initial Commit

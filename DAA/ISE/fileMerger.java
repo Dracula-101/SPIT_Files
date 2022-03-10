@@ -23,7 +23,7 @@ public class fileMerger {
         }
     }
 
-    public void merger(int choice) throws IOException {
+    public void merger() throws IOException {
         newArray = new int[numberGenerator.numbers];
 
         int totalTime = 0;
@@ -34,74 +34,11 @@ public class fileMerger {
             tempArray = fr.readFile(filename);
             System.arraycopy(tempArray, 0, newArray, 0, tempArray.length);
             double time1 = System.currentTimeMillis();
-            switch (choice) {
-                case 0:
-                    bubblesort bs = new bubblesort();
-                    bs.bubbleSortIteration(newArray);
-                    time2 = System.currentTimeMillis();
-                    if (i == 1)
-                        System.out.print("\n\nBubble Sort: ");
-                    else
-                        System.out.print("\nMerging Files 1-" + (i + 1) + " : " + (time2 - time1) + " ms");
-                    break;
-                case 1:
-                    insertionsort is = new insertionsort();
-                    is.insertionSort(newArray);
-                    time2 = System.currentTimeMillis();
-                    if (i == 1)
-                        System.out.print("\n\nInsertion Sort: ");
-                    else
-                        System.out.print("\nMerging Files 1-" + (i + 1) + " : " + (time2 - time1) + " ms");
-                    break;
-                case 2:
-                    selectionsort ss = new selectionsort();
-                    ss.selectionSort(newArray);
-                    time2 = System.currentTimeMillis();
-                    if (i == 1)
-                        System.out.print("\n\nSelection Sort: ");
-                    else
-                        System.out.print("\nMerging Files 1-" + (i + 1) + " : " + (time2 - time1) + " ms");
-                    break;
-                case 3:
-                    quicksort qs = new quicksort();
-                    qs.quickSort(newArray, 0, newArray.length - 1);
-                    time2 = System.currentTimeMillis();
-                    if (i == 1)
-                        System.out.print("\n\nQuick Sort: ");
-                    else
-                        System.out.print("\nMerging Files 1-" + (i + 1) + " : " + (time2 - time1) + " ms");
-                    break;
-                case 4:
-                    heapsort hs = new heapsort();
-                    hs.heapSort(newArray);
-                    time2 = System.currentTimeMillis();
-                    if (i == 1)
-                        System.out.print("\n\nHeap Sort: ");
-                    else
-                        System.out.print("\nMerging Files 1-" + (i + 1) + " : " + (time2 - time1) + " ms");
-                    break;
-                case 5:
-                    radixsort rs = new radixsort();
-                    rs.radixSort(newArray, newArray.length);
-                    time2 = System.currentTimeMillis();
-                    if (i == 1)
-                        System.out.print("\n\nRadix Sort: ");
-                    else
-                        System.out.print("\nMerging Files 1-" + (i + 1) + " : " + (time2 - time1) + " ms");
-                    break;
-                case 6:
-                    mergesort ms = new mergesort();
-                    ms.mergeSort(newArray, 0, newArray.length - 1);
-                    time2 = System.currentTimeMillis();
-                    if (i == 1)
-                        System.out.print("\n\nMerge Sort: ");
-                    else
-                        System.out.print("\nMerging Files 1-" + (i + 1) + " : " + (time2 - time1) + " ms");
-                    break;
-                default:
-                    System.out.println("\nError in assigning sort");
-                    break;
-            }
+            time2 = System.currentTimeMillis();
+            if (i == 1)
+                System.out.print("\n\nMerge Sort: ");
+            else
+                System.out.print("\nMerging Files 1-" + i + " : " + (time2 - time1) + " ms");
             totalTime += time2 - time1;
             // System.out.print("\n\n" + Arrays.toString(newArray));
         }

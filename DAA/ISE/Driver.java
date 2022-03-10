@@ -57,11 +57,11 @@ public class Driver {
             System.out.print("\nInvalid Choice");
             System.exit(0);
         }
-        System.out.print("\n----------TOTAL TIME----------\n");
-        System.out.print("\n\nTOTAL TIME FOR ALL THE SORTING IS : "
+        System.out.print("\n----------TOTAL TIME----------");
+        System.out.print("\nTOTAL TIME FOR ALL THE SORTING IS : "
                 + (numberGenerator.duration + numberGenerator.shufffleTime + fc.duration + sa.totalTime
                         + fm.duration)
-                + "ms");
+                + "ms\n");
         input.close();
     }
 }
