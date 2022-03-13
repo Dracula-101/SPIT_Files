@@ -15,6 +15,7 @@ public class Driver {
                 HuffmanNode root1 = HM.makeTree();
                 HM.printTree(root1, "");
                 HM.displayMap();
+                break;
             case 2:
                 System.out.print("\nEnter the String to be encoded(without space)");
                 System.out.print("\n->");
@@ -32,7 +33,6 @@ public class Driver {
                     }
                 }
                 System.out.print("\nAll the Characters in the String are: ");
-                System.out.print("\n" + chars.toString());
                 HM.setup(chars);
                 HuffmanNode root2 = HM.makeTree();
                 HM.printTree(root2, "");

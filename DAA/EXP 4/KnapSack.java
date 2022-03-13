@@ -17,42 +17,44 @@ public class KnapSack {
         ArrayList<Integer> _temp = new ArrayList<Integer>();
 
         String numbers[];
-        int length;
+        int length = 0;
         int values[], weight[], W;
 
         System.out.print("\n\t\tKNAPSACK ALGORITHM");
         BufferedReader br = new BufferedReader(new java.io.InputStreamReader(System.in));
         // Take values input
-        System.out.print("\nEnter the Values of the array(with space)\n-> ");
+        System.out.print("\n---- Values of items ----\n ");
+        System.out.print("\nEnter the Values(with space)\n-> ");
 
-        numbers = br.readLine().split(" ");
-        for (String number : numbers)
-            _temp.add(Integer.parseInt(number));
+        String inputstr = br.readLine();
+        if (!inputstr.equals("")) {
+            numbers = inputstr.split(" ");
+            for (String number : numbers)
+                _temp.add(Integer.parseInt(number));
+            length = _temp.size();
+        }
 
-        length = _temp.size();
         values = new int[length];
         listtoArray(values, _temp);
 
         // weight input
         weight = new int[length];
-        System.out.print("\n---- Weights of items ----\n ");
+        System.out.print("\n---- Weight of items ----\n ");
+        System.out.print("\nEnter the weight of the items\n-> ");
         for (int i = 0; i < length; i++) {
-            System.out.print("\n-> Weight of item '" + _temp.get(i) + "' : ");
             weight[i] = input.nextInt();
         }
 
         // Maz weight
         System.out.print("\nEnter the Max Weight: ");
         W = input.nextInt();
-
+        System.out.print("\nFormulating the problem \n");
         System.out.println("\nThe limit of max possible weight is " + knapsack(values, weight, W));
         input.close();
 
     }
 
     public static int knapsack(int val[], int wt[], int W) {
-
-        System.out.print("\nFormulating the problem \n");
 
         // Get the total number of items.
         // Could be wt.length or val.length. Doesn't matter
@@ -95,7 +97,7 @@ public class KnapSack {
                             values[item - 1][weight]);
                 }
 
-                else {
+                else if (wt[item - 1] > weight) {
                     // If the current item's weight is more than the
                     // running weight, just carry forward the value
                     // without the current item
@@ -107,12 +109,12 @@ public class KnapSack {
         }
 
         // Printing the matrix
-        for (int[] rows : values) {
-            for (int col : rows) {
-                System.out.format("%5d", col);
-            }
-            System.out.println();
-        }
+        // for (int[] rows : values) {
+        // for (int col : rows) {
+        // System.out.format("%5d", col);
+        // }
+        // System.out.println();
+        // }
         return values[N][W];
     }
 
