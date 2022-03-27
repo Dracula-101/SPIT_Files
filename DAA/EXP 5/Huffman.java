@@ -1,10 +1,11 @@
 import java.util.*;
 
 class HuffmanNode {
-
+    // Huffman node class
     int data;
     char character;
 
+    // constructor
     HuffmanNode left, right;
 
     HuffmanNode() {
@@ -12,6 +13,7 @@ class HuffmanNode {
         this.right = null;
     }
 
+    // constructor
     HuffmanNode(char ch, int data) {
         this.left = null;
         this.right = null;
@@ -22,6 +24,7 @@ class HuffmanNode {
 }
 
 class MyComparator implements Comparator<HuffmanNode> {
+    // Comparator class
     public int compare(HuffmanNode x, HuffmanNode y) {
 
         return x.data - y.data;
@@ -29,17 +32,24 @@ class MyComparator implements Comparator<HuffmanNode> {
 }
 
 public class Huffman {
+    // Huffman class
+
     char charArray[];
     int charFreq[];
     int characters;
+    // User input
     Scanner input = new Scanner(System.in);
+    // Huffman tree
     PriorityQueue<HuffmanNode> queue;
+    // hashmap to store the encodings
     HashMap<Character, String> map = new HashMap<Character, String>();
 
+    // User input method
     public void userInput() {
         System.out.print("\nEnter the number of characters to be read: ");
         characters = input.nextInt();
 
+        // Priority queue to store the Huffman nodes
         queue = new PriorityQueue<HuffmanNode>(characters, new MyComparator());
 
         charArray = new char[characters];
@@ -69,6 +79,7 @@ public class Huffman {
     }
 
     public void setup(HashMap<Character, Integer> values) {
+        // setup method
         characters = values.size();
         charArray = new char[characters];
         charFreq = new int[characters];
@@ -83,13 +94,16 @@ public class Huffman {
     }
 
     public HuffmanNode makeTree() {
+        // makeTree method
         System.out.print("\nStarted Making the Huffman Tree\n");
         for (int i = 0; i < characters; i++) {
+            // Adding the nodes to the queue
             HuffmanNode hNode = new HuffmanNode(charArray[i], charFreq[i]);
             queue.add(hNode);
         }
         HuffmanNode root = null;
         int counter = 1;
+        // Making the tree
         while (queue.size() > 1) {
             System.out.print("\n-----------------------------------\n");
             System.out.print("\nStep " + counter);
@@ -100,10 +114,10 @@ public class Huffman {
             queue.poll();
 
             HuffmanNode f = new HuffmanNode();
-
+            // Combining the nodes
             f.data = x.data + y.data;
             f.character = '+';
-
+            // Adding the combined node to the queue
             f.left = x;
             f.right = y;
             root = f;
@@ -129,13 +143,14 @@ public class Huffman {
             map.put(root.character, characters);
             return;
         }
-
+        // Printing the left child
         printTree(root.left, characters + "0");
         printTree(root.right, characters + "1");
 
     }
 
     public void displayMap() {
+        // Displaying the map
         System.out.println("\n\nThe Encoding is: ");
         for (Map.Entry m : map.entrySet())
             System.out.println(m.getKey() + " " + m.getValue());

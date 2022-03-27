@@ -10,6 +10,7 @@ public class Driver {
         int choice = HM.input.nextInt();
         switch (choice) {
             case 1:
+                // character input
                 HM.userInput();
                 HM.printArrays();
                 HuffmanNode root1 = HM.makeTree();
@@ -17,6 +18,7 @@ public class Driver {
                 HM.displayMap();
                 break;
             case 2:
+                // string input
                 System.out.print("\nEnter the String to be encoded(without space)");
                 System.out.print("\n->");
                 String str = HM.input.next();
