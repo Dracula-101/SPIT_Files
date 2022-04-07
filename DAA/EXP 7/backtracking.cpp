@@ -37,10 +37,10 @@
 #include <stdlib.h>
 static int total_nodes;
 void printValues(int A[], int size){
+   printf("\n\n");
    for (int i = 0; i < size; i++) {
       printf("%*d", 5, A[i]);
    }
-   printf("\n");
 }
 void subset_sum(int s[], int t[], int s_size, int t_size, int sum, int ite, int const target_sum){
    total_nodes++;
@@ -62,11 +62,24 @@ void generateSubsets(int s[], int size, int target_sum){
    free(tuplet_vector);
 }
 int main(){
-   int set[] = { 5, 6, 12 , 54, 2 , 20 , 15 };
-   int size = sizeof(set) / sizeof(set[0]);
+   int size;
+   int target_sum;
+   printf("\n--------------------------------");
+   printf("\nEnter the size of the set: ");
+   scanf("%d", &size);
+   int set[size];
+   printf("\n--------------------------------");
+   printf("\nEnter the elements of the set: ");
+   for (int i = 0; i < size; i++) {
+      scanf("%d", &set[i]);
+   }
    printf("The set is ");
    printValues(set , size);
-   generateSubsets(set, size, 25);
-   printf("Total Nodes generated %d\n", total_nodes);
+   printf("\n--------------------------------");
+   printf("\nEnter the target sum: ");
+   scanf("%d", &target_sum);
+
+   generateSubsets(set, size, 24);
+   printf("\n\nTotal Nodes generated %d\n", total_nodes);
    return 0;
 }
