@@ -1,22 +1,17 @@
 import java.util.*;
 
-class Node {
-    int[][] array;
-    int misplaced;
-    int recent;
-    // 1 up| 2 right| 3 down| 4 left|
-}
-
 class branchBounds {
     int blankRow;
     int blankRowIndex;// row index
     int blackColIndex;// column index
     int totalCost;
     String isChoosen = "None";
-    int[][] targetMatrix = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, {
-            13, 14, 15, 0 } };
+    int[][] targetMatrix;
 
     boolean isSolvable(int[][] arr, int row_len) {
+        makeTargetMatrix(arr, row_len);
+        System.out.print("\nThe Target Matrix: ");
+        printArray(targetMatrix);
         int inv = inversions(arr); // method that counts the number of inversions (i<j, arr[i]>arr[j])
         if (arr.length % 2 != 0) {// checks if n is odd
             if (inv % 2 == 0) {// if the length is odd, and inversions are even the puzzle is solvable
@@ -30,6 +25,17 @@ class branchBounds {
             }
         }
         return false;
+    }
+
+    public void makeTargetMatrix(int[][] arr, int row_len) {
+        this.targetMatrix = new int[row_len][row_len];
+        int counter = 0;
+        for (int i = 0; i < row_len; i++) {
+            for (int j = 0; j < row_len; j++) {
+                this.targetMatrix[i][j] = counter++;
+            }
+        }
+        this.targetMatrix[row_len - 1][row_len - 1] = 0;
     }
 
     int inversions(int[][] arr) {
