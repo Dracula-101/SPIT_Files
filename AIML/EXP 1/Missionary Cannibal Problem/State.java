@@ -35,7 +35,7 @@ public class State {
                 && (missionaryLeft == 0 || missionaryLeft >= cannibalLeft)
                 && (missionaryRight == 0 || missionaryRight >= cannibalRight)
                 && ((boat == 0 && sumLeft > 0)
-                        && (boat == 1 && sumRight > 0));
+                        || (boat == 1 && sumRight > 0));
     }
 
     // getters
@@ -150,10 +150,49 @@ public class State {
     }
 
     public static String pathGenerator(State state) {
-        return state.path + "[ " + state.missionaryLeft + " " + state.cannibalLeft + " | "
-                + (state.boat == 0 ? "->" : "<-") + " | "
-                + state.missionaryRight + " "
-                + state.cannibalRight + " ]\n";
+        StringBuilder displayPath = new StringBuilder();
+        displayPath.append(state.path);
+        for (int i = 0; i < 3; i++) {
+            if (state.missionaryLeft > i)
+                displayPath.append("M");
+            else
+                displayPath.append("_");
+        }
+
+        displayPath.append("  ");
+
+        for (int i = 0; i < 3; i++) {
+            if (state.cannibalLeft > i)
+                displayPath.append("C");
+            else
+                displayPath.append("_");
+        }
+        if (state.boat == 0)
+            displayPath.append(" \\___/");
+        displayPath.append("           ");
+
+        if (state.boat == 1)
+            displayPath.append("\\___/ ");
+        for (int i = 0; i < 3; i++) {
+            if (state.missionaryRight > i)
+                displayPath.append("M");
+            else
+                displayPath.append("_");
+        }
+        displayPath.append("  ");
+        for (int i = 0; i < 3; i++) {
+            if (state.cannibalRight > i)
+                displayPath.append("C");
+            else
+                displayPath.append("_");
+        }
+        displayPath.append("\n\n");
+        return displayPath.toString();
+        // return state.path + "[ " + state.missionaryLeft + " " + state.cannibalLeft +
+        // " | "
+        // + (state.boat == 0 ? "->" : "<-") + " | "
+        // + state.missionaryRight + " "
+        // + state.cannibalRight + " ] " + action + " \n";
     }
 
 }

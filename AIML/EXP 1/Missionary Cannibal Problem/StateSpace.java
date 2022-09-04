@@ -12,11 +12,17 @@ class StateSpace {
         if (state.boat == 0) {
             makeTrips(
                     State.oneMissionaryRight(state),
-                    State.oneCannibalRight(state));
+                    State.oneCannibalRight(state),
+                    State.oneMissionaryOneCannibalRight(state),
+                    State.twoMissionariesRight(state),
+                    State.twoCannibalsRight(state));
         } else {
             makeTrips(
                     State.oneMissionaryLeft(state),
-                    State.oneCannibalLeft(state));
+                    State.oneCannibalLeft(state),
+                    State.oneMissionaryOneCannibalLeft(state),
+                    State.twoMissionariesLeft(state),
+                    State.twoCannibalsLeft(state));
         }
     }
 
