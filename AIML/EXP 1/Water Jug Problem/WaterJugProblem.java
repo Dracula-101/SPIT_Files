@@ -43,11 +43,7 @@ public class WaterJugProblem {
                 // (visitedNodes + 1) + " move(s)");
                 // System.out.println("Number of nodes traversed: " + visitedNodes);
                 System.out.println("The path is: " + generatePath(jug));
-                counter++;
-                if (counter == 5) {
-                    flag = true;
-                    break;
-                }
+                break;
             }
 
             Node temp = jug;

@@ -1,0 +1,4 @@
+Enter the Capacity of Jug A: 4
+Enter the Capacity of Jug B: 3
+Enter the Target Capacity of Jug A: 2
+Enter the Target Capacity of Jug B: 0

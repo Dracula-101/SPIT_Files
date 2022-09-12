@@ -1,0 +1,50 @@
+The path is:
+MMM  CCC \___/           ___  ___
+
+MM_  CC_           \___/ M__  C__
+
+MMM  CC_ \___/           ___  C__
+
+MMM  ___           \___/ ___  CCC
+
+MMM  C__ \___/           ___  CC_
+
+M__  C__           \___/ MM_  CC_
+
+MM_  CC_ \___/           M__  C__
+
+___  CC_           \___/ MMM  C__
+
+___  CCC \___/           MMM  ___
+
+___  C__           \___/ MMM  CC_
+
+M__  C__ \___/           MM_  CC_
+
+
+MMM  CCC \___/           ___  ___
+
+MM_  CC_           \___/ M__  C__
+
+MMM  CC_ \___/           ___  C__
+
+MMM  ___           \___/ ___  CCC
+
+MMM  C__ \___/           ___  CC_
+
+M__  C__           \___/ MM_  CC_
+
+MM_  CC_ \___/           M__  C__
+
+___  CC_           \___/ MMM  C__
+
+___  CCC \___/           MMM  ___
+
+___  C__           \___/ MMM  CC_
+
+M__  C__ \___/           MM_  CC_
+
+___  ___           \___/ MMM  CCC
+
+The required arrangment can be achieved after 5558 move(s)
+Number of nodes traversed: 5557
