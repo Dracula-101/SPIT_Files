@@ -8,9 +8,6 @@ public class Node {
     Node parent;
     String direction;
     int nodeCost = 0;
-    int goalCost = 0;
-    int estimatedCost = 0;
-
     //data members for misplaced tiles method
     int hMisplaced = 0;
     int fMisplaced = 0;
@@ -23,7 +20,6 @@ public class Node {
         setPuzzle(puzzleParameter);
         this.parent = parent;
         this.direction = direction;
-        estimatedCost = nodeCost + goalCost;
 
         //setting misplaced tiles data members
         hMisplaced = getMisplacedTiles();
@@ -55,7 +51,6 @@ public class Node {
 
             Node child = new Node(puzzleClone, puzzle.length, parent, "Moved Right");
             child.nodeCost = this.nodeCost + 1;
-            child.estimatedCost = child.nodeCost + child.goalCost;
 
             //special f data member for misplaced f heuristic
             child.fMisplaced = child.nodeCost + child.hMisplaced;
@@ -76,7 +71,6 @@ public class Node {
 
             //setting the node cost
             child.nodeCost = this.nodeCost + 1;
-            child.estimatedCost = child.nodeCost + child.goalCost;
             child.fMisplaced = child.nodeCost + child.hMisplaced;
             //adding children to the children list
             children.add(child);
@@ -96,7 +90,6 @@ public class Node {
 
             //setting the node cost
             child.nodeCost = this.nodeCost + 1;
-            child.estimatedCost = child.nodeCost + child.goalCost;
             child.fMisplaced = child.nodeCost + child.hMisplaced;
             
             //children list
@@ -117,7 +110,6 @@ public class Node {
 
             //setting the node cost
             child.nodeCost = this.nodeCost + 1;
-            child.estimatedCost = child.nodeCost + child.goalCost;
             child.fMisplaced = child.nodeCost + child.hMisplaced;
 
             //adding children to the children list
@@ -195,13 +187,6 @@ public class Node {
     }
 }// end of Node class
 
-class myComparator implements Comparator<Node> {
-    public int compare(Node n1, Node n2) {
-
-        return n1.estimatedCost - n2.estimatedCost;
-    }
-
-}
 
 class comparatorForMisplaced implements Comparator<Node> {
     public int compare(Node n1, Node n2) {
