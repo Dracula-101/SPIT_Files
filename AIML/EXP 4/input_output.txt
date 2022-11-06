@@ -1,0 +1,16 @@
+Input:
+ 0, 0, 1, 0,
+ 1, 0, 0, 1,
+ 1, 1, 0, 0,
+ 0, 0, 1, 0
+
+Output:
+
+Right
+Down
+Right
+Down
+Right
+Down 
+
+Nodes expanded: 213

@@ -1,0 +1,32 @@
+# Program 1
+
+Is Father Successor of Grandfather?
+
+Output
+
+fatherSuccessorGrandfather(bhavesh)
+True
+
+Is Mother Female?
+
+motherFemale(karisma)
+true
+
+grandfather(mahesh, bhavesh)
+true
+
+grandmother(kareena, ravina)
+true
+
+uncle(anil, bhavesh)
+true
+
+# Program 2
+
+rle([a,a,a,b,b,b,c,c],X)
+X = [a, b, c]
+
+
+rle([p,q,r,s,s,s,s,t,t,t,t],X)
+X = [p, q, r, s, t]
+
