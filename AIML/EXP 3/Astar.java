@@ -8,23 +8,27 @@ public class Astar {
     public static int nodeCount;
     public static int heuristic_static;
 
+    // Constructor to initialize the queue
     public Astar(Node root) {
         System.out.print("\nStarting A* with heuristic: ");
 
         nodeCount = 0;
 
+        // Add the root node to the queue
         if (isGoal(root))
             return;
 
         addToQueue(root);
-
+        // Running the loop until the queue is empty and finding the goal node
         while (queue.size() > 0) {
             Node u = dequeueMin();
 
             for (Node v : generateChildren(u)) {
                 if (!isVisited(v)) {
+                    // If the node is the goal node, print the path and return
                     if (isGoal(v))
                         return;
+                    // Else add the node to the queue
                     addToQueue(v);
                 }
             }
@@ -43,6 +47,7 @@ public class Astar {
     }
 
     public ArrayList<Node> generateChildren(Node parent) {
+        // create children for up down left right
         Node U = parent.moveUp();
         Node D = parent.moveDown();
         Node L = parent.moveLeft();
@@ -91,7 +96,6 @@ public class Astar {
 
     // calculate and print move sequence
     public void printMoves(Node node) {
-
         for (int i = 1; i < getTotalNodes(node); i++) {
             System.out.print("\n\nMoves " + getNodeInIndex(i, node).getDirection());
             printBoard(getNodeInIndex(i, node));
@@ -143,8 +147,10 @@ public class Astar {
         };
 
         System.out.println("\nInitial Board: ");
+        //make the start node for the puzzle
         Node start = new Node(initialBoard, null, "#");
         printBoard(start);
+        //run the A* algorithm
         new Astar(start);
     }
 

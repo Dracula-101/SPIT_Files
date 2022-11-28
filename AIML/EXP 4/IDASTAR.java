@@ -4,11 +4,12 @@ public class IDASTAR {
     PriorityQueue<Node> queue = new PriorityQueue<>();
     int numNodesExpanded = 0;
     boolean goalFound = false;
-
+    //Priority queue for the open list
     PriorityQueue<Integer> intqueue;
 
     // main method
     public static void main(String[] args) {
+        // create new IDA* object
         IDASTAR theIDASTAR;
         int[] puzzle = {
                 0, 0, 1, 0,
