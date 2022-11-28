@@ -5,8 +5,7 @@ import numpy as np
 from sklearn.metrics import r2_score
 
 def Data_example():
-    data = pd.read_csv('Fish.csv')
-    # copy only first 1000 data
+    data = pd.read_csv('C:/Users/Dilip Patel/Downloads/SPIT_Files/AIML/EXP 7/Fish.csv')
     df = data.copy()
     df.head()
     # Dependant (Target) Variable:
@@ -50,7 +49,30 @@ class Multiple_Linear_Regression():
         y_predict = np.dot(X_test, self.theta)
 
         return y_predict
+    
+    # gradient descent without theta
+    def gradient_descent(self, X_train, y_train, theta ,learning_rate, iterations):
+        m = len(y_train)
+        #remove 1st elemt in theta
+        theta = theta[1:]
+        cost_history = np.zeros(iterations)
+        theta_history = np.zeros((iterations, 5))
 
+        for it in range(iterations):
+            prediction = np.dot(X_train, theta)
+
+            theta = theta - (1 / m) * learning_rate * (X_train.T.dot((prediction - y_train)))
+            theta_history[it, :] = theta.T
+            cost_history[it] = self.compute_cost(X_train, y_train, theta)
+
+        return theta
+
+
+    def compute_cost(self, X, y, theta):
+        m = len(y)
+        y_predicted = X.dot(theta)
+        cost = (1 / 2 * m) * np.sum((y_predicted - y) ** 2)
+        return cost
 
 def main():
     # -------------------------------------------------------------------------
@@ -60,9 +82,15 @@ def main():
     # MLR with Gradient Descent
     model = Multiple_Linear_Regression()
     theta = model.fit(X_train, y_train)
+
+    theta = model.gradient_descent(X_train, y_train,theta,  0.000001, 1000)
+
     print('Equation for Multiple Linear Regression is')
-    print('y = ', theta[0], ' + ', theta[1], '* b0 + ', theta[2], '* b1 + ',
-          theta[3], '* b2 + ', theta[4], '* b3 + ', theta[5], '* b4')
+    str = ''
+    for i in range(len(theta)):
+        str += f'{theta[i]}* b{i} +'
+
+    print('y = ',str[:-1])
     y_preds = model.predict(X_test)
 
     # Predict values for test and predicted
