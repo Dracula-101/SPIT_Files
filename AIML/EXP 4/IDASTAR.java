@@ -4,7 +4,7 @@ public class IDASTAR {
     PriorityQueue<Node> queue = new PriorityQueue<>();
     int numNodesExpanded = 0;
     boolean goalFound = false;
-    //Priority queue for the open list
+    // Priority queue for the open list
     PriorityQueue<Integer> intqueue;
 
     // main method
@@ -12,10 +12,7 @@ public class IDASTAR {
         // create new IDA* object
         IDASTAR theIDASTAR;
         int[] puzzle = {
-                0, 0, 1, 0,
-                1, 0, 0, 1,
-                1, 1, 0, 0,
-                0, 0, 1, 0
+                1, 2, 3, 4, 5, 6, 0, 8, 9, 10, 7, 11, 13, 14, 15, 12
         };
         // Right Down Right Down Right Down
         // declaring root node
@@ -25,7 +22,7 @@ public class IDASTAR {
         root = new Node(puzzle, puzzle.length, null, 0, "Start");
 
         // calling the IDA* method
-        System.out.println("\nIDA Star Method For Rat Maze:");
+        System.out.println("\nIDA Star Method For 8 Puzzle:");
 
         // setting the root node cost
         theIDASTAR.idManhattan(root);
@@ -38,7 +35,6 @@ public class IDASTAR {
         // adding the root to the queue
         intqueue.add(root.fcost);
 
-        // while the queue is not empty
         while (!goalFound) {
             if (!intqueue.isEmpty()) {
                 // removing the first element from the queue
@@ -133,8 +129,7 @@ class Node {
 
     // method to move right. adds new child to children list
     public void moveRight(Node parent) {
-        // rat in a maze move right
-        // check if the rat can move right
+        // moving in the right direction
         if ((currentPos + 1) % columns != 0 && puzzle[currentPos + 1] != 1) {
             int[] puzzleClone = puzzle.clone();
             int temp = puzzleClone[currentPos];
@@ -211,7 +206,7 @@ class Node {
 
     // method to check if the node is the goal
     public boolean reachedGoal() {
-        // rat in a maze goal reached condition
+        // if the last element is not 0, then it is not the goal
         if (currentPos == puzzle.length - 1) {
             return true;
         }
@@ -222,7 +217,7 @@ class Node {
     // member
     public void expandNode(Node node) {
 
-        // rat in a maze
+        // expanding all the possible moves
         node.moveRight(node);
         node.moveLeft(node);
         node.moveUp(node);
@@ -253,7 +248,7 @@ class Node {
 
     // method to calculate the manhattan distance
     public int manhattanDist() {
-        // rat in a maze
+        // calculating the manhanattan distance
         int row = currentPos / columns;
         int col = currentPos % columns;
         int goalRow = (puzzle.length - 1) / columns;
